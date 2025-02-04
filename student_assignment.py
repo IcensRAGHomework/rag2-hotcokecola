@@ -26,7 +26,7 @@ def hw02_1(q1_pdf):
         #    print(chunk)
         #    print('-' * 20)
 
-    chunks = f"{chunks}, {len(pyPDFDocument)}!"
+    chunks = f"{q1_pdf}, {len(pyPDFDocument)}, {chunks}"
 
     return chunks
 

@@ -39,8 +39,8 @@ def hw02_2(q2_pdf):
     count=0
     for i, chunk in enumerate(chunks):
         text = chunk.page_content  # Access the text content of the chunk
-        #print(f"Chunk {count}:")
-        #print(text)
+        print(f"Chunk {count}:")
+        print(text)
         count+=1
         if i == 0:
            continue

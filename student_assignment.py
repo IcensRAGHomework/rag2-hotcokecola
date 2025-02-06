@@ -37,6 +37,7 @@ def hw02_2(q2_pdf):
     numChunks = len(chunks)
     
     count=0
+    isFirstChapter = 0
     for i, chunk in enumerate(chunks):
         text = chunk.page_content  # Access the text content of the chunk
         print(f"Chunk {count}:")
@@ -44,9 +45,17 @@ def hw02_2(q2_pdf):
         count+=1
         if i == 0:
            continue
-        if not text.startswith("第 "):
-           numChunks -= 1
-           count-=1
+        
+        if isFirstChapter == 0:
+            if not text.startswith("第 一 章"):
+               numChunks -= 1
+               count-=1
+            else:
+               isFirstChapter = 1
+        else: 
+            if not text.startswith("第 "):
+               numChunks -= 1
+               count-=1
 
  
     #for i, chunk in enumerate(merged_chunks):
